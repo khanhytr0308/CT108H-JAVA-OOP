@@ -2,33 +2,33 @@ package lab2_2;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 class Date {
-    int ngay;
-    int thang;
-    int nam;
+    int d;
+    int m;
+    int y;
 
     Date(){
-        ngay = 0;
-        thang = 0;
-        nam = 0;
+        d = 1;
+        m= 1;
+        y = 1;
     }
-    Date(int ngay, int thang, int nam){
-        this.ngay = 0;
-        this.thang = 0;
-        this.nam = 0;
-    }
-
-    void printdate(int ngay, int thang, int nam){
-        System.out.println("ngay: " + ngay + "thang: " + thang + "nam: " +nam);
+    Date(int d, int m, int y){
+        this.d = d;
+        this.m= m;
+        this.y = y;
     }
 
-    void scandate(int ngay, int thang, int nam){
+    void printdate(){
+        System.out.println("ngay: " + this.d + " thang: " + this.m + " nam: " + this.y);
+    }
+
+    void scandate(){
         Scanner sc = new Scanner(System.in);
         boolean hople = false;
 
         while(!hople){
             try{
                 System.out.println("nhap ngay");
-                ngay = sc.nextInt();
+                this.d = sc.nextInt();
 
                 hople = true;
             }catch(InputMismatchException e){
@@ -36,10 +36,11 @@ class Date {
                 sc.next();
             }
         }
+        hople = false;
          while(!hople){
             try{
                 System.out.println("nhap thang");
-                thang = sc.nextInt();
+                this.m = sc.nextInt();
 
                 hople = true;
             }catch(InputMismatchException e){
@@ -47,10 +48,11 @@ class Date {
                 sc.next();
             }
         }
+        hople = false;
          while(!hople){
             try{
                 System.out.println("nhap nam");
-                nam = sc.nextInt();
+                this.y = sc.nextInt();
 
                 hople = true;
             }catch(InputMismatchException e){
@@ -60,25 +62,45 @@ class Date {
         }
     }
     boolean datehople(){
-        if(thang < 1 || thang > 12){
+        if(m < 1 || m > 12){
             return false;
         }
         int maxday;
-        if(thang == 2){
-            if(nam % 400 == 0 || (nam % 4 == 0 && nam % 100 != 0)){
+        if(m == 2){
+            if(y % 400 == 0 || (y % 4 == 0 && y % 100 != 0)){
                 maxday = 29;
             }
             else{
                 maxday = 28;
             }
         }
-        else if(thang == 4 || thang == 6 || thang == 9 || thang == 11){
+        else if(m == 4 || m == 6 || m == 9 || m == 11){
             maxday = 30;
         }
         else{
             maxday = 31;
         }
-        return ngay >= 1 && ngay <= maxday;
+        return d >= 1 && d <= maxday;
+    }
+    Date ngayhomsau(){
+    Date homsau = new Date(this.d, this.m, this.y);
+    homsau.d ++;
+    if(homsau.d > 30){
+        homsau.d = 1;
+        homsau.m ++;
+    }
+    if(homsau.m > 12){
+        homsau.m = 1;
+        homsau.y ++;
+    }
+    return homsau;
+    }
+    Date add(int n){
+        Date r = new Date(d, m, y);
+        for(int i = 0; i < n; i++){
+            r = r.ngayhomsau();
+        }
+        return r;
     }
 }
 

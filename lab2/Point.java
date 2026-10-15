@@ -2,19 +2,19 @@ package lab2;
 
 import java.util.Scanner;
 
-    class Diem{
+    class Point{
         int x;
         int y;
 
-        Diem(){
+        Point(){
             x = 0;
             y = 0;
         }
-        Diem(int x, int y){
+        Point(int x, int y){
             this.x = x;
             this.y = y;
         }
-        void nhapdiem(){
+        void input(){
             Scanner sc = new Scanner(System.in);
 
             System.out.println("nhap x");
@@ -23,24 +23,28 @@ import java.util.Scanner;
             System.out.println("nhap y");
             this.y = sc.nextInt();
         }
-        void hienthi(){
+        void show(){
             System.out.println("diem x: " + x);
             System.out.println("diem y: " + y);
         }
-        void doidiem(int dx, int dy){
+        void changepoint(int dx, int dy){
             this.x = x + dx;
             this.y = y + dy;
         }
-        int giaTriX(){
+        int valueX(){
             return this.x;
         }
-        int giaTriY(){
+        int valueY(){
             return this.y;
         }
-        double khoangcach(){
+        double distance(){
             return Math.sqrt(this.x * this.x + this.y * this.y);
         }
-        double khoangcach(Diem d){
+        double distance(Point d){
             return Math.sqrt((this.x - d.x)*(this.x - d.x) + (this.y - d.y)*(this.y - d.y));
+        }
+        Point meanAB(Point A, Point B){
+            return new Point((A.x + B.x) / 2,
+                     (A.y + B.y) / 2);
         }
     }
