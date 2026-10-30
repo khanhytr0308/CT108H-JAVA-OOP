@@ -25,9 +25,9 @@ public class use_Student2 {
         }
     
         //Tìm các sinh viên bị cảnh báo học vụ.
+        System.out.println("sinh vien bi canh bao hoc vu: ");
         for(int i = 0; i < n; i++){
             if(ds[i].avg_socres() < 1.0){
-                System.out.println("sinh vien bi canh bao hoc vu: ");
                 ds[i].toString();
             }
         }
@@ -41,5 +41,24 @@ public class use_Student2 {
         }
         System.out.println("sinh vien cao diem nhat: ");
         max.to_string();
+
+
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n - 1 - i; j ++){
+                
+                String name1 = ds[j].get_name();
+                String name2 = ds[j + 1].get_name();
+
+                if(name1.compareToIgnoreCase(name2) > 0){
+                    Student2 temp = ds[j];
+                    ds[j] = ds[j + 1];
+                    ds[j + 1] = temp;
+                }
+            }
+        }
+
+        for(int i = 0; i < n; i++){
+            ds[i].to_string();
+        }
     }
 }

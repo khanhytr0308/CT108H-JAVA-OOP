@@ -160,4 +160,11 @@ public class Student2 {
         scores = new_score;
         courses --;
     }
+
+    public String get_name(){
+        String full_name = this.name.trim();
+        int pos = full_name.lastIndexOf(" ");
+
+        return full_name.substring(pos + 1);
+    }
 }
