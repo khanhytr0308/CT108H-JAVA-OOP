@@ -65,3 +65,6 @@ public class products {
         System.out.println("ma san pham: " + this.maSP + "ten san pham: " + this.tenSP + "don gia: " + this.dongia);
     }
 }
+
+
+

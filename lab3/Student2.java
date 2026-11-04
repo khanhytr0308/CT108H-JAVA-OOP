@@ -37,9 +37,8 @@ public class Student2 {
         this.scores = a.scores;
     }
 
-    Scanner sc = new Scanner(System.in);
 
-    public void input_ifo(){
+    public void input_ifo(Scanner sc){
 
         System.out.println("nhap mssv:");
         this.id = sc.nextLine();
@@ -62,7 +61,7 @@ public class Student2 {
         }
     }
     //Hàm nhập điểm cho các học phần của sinh viên
-    public void input_scores(){
+    public void input_scores(Scanner sc){
         this.scores = new String[this.courses];
         for(int i = 0; i < this.courses; i++){
             System.out.println("Nhap diem mon " + this.name_courses[i] + ":");

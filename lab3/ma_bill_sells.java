@@ -11,7 +11,7 @@ public class ma_bill_sells {
         laptop.input_products();
         mouse.input_products();
         keyboard.input_products();
-
+1
         //tạo một mảng đối tượng HoaDon có 5 phần tử.
         bills[] hoadon = new bills[5]; 
 

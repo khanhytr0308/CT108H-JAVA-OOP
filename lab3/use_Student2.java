@@ -6,22 +6,22 @@ public class use_Student2 {
         //Tạo sinh viên a. Nhập thông tin cho sinh viên a. Đăng ký thêm cho sinh viên a 1 học
         //phần là “LTHDT”. Hiển thị thông tin của a.
         Student2 a = new Student2();
-        a.input_ifo();
-        a.input_scores();
+        Scanner sc = new Scanner(System.in);
+        a.input_ifo(sc);
+        a.input_scores(sc);
         a.add_courses("LTHDT", "A");
         a.to_string();
 
         //Tạo 1 danh sách sinh viên. Nhập thông tin cho danh sách sinh viên trên.
         System.out.println("nhap so sinh vien");
-        Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
         Student2[] ds = new Student2[n];
         for(int i = 0; i < n; i ++){
             System.out.println("sinh vien thu: " + (i + 1));
             ds[i] = new Student2();
-            ds[i].input_ifo();
-            ds[i].input_scores();
+            ds[i].input_ifo(sc);
+            ds[i].input_scores(sc);
         }
     
         //Tìm các sinh viên bị cảnh báo học vụ.
