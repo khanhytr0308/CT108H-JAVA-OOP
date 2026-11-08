@@ -32,6 +32,5 @@ public class SD_SVCNTT {
                 ds[i].to_string();
             }
         }
-        sc.close();
     }
 }

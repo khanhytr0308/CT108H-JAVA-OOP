@@ -9,12 +9,14 @@ public class SVCNTT extends Student2 {
     public String email;
 
     SVCNTT() {
+        super();
         this.taikhoan = "B250000";
         this.matkhau = "1122";
         this.email = "khanhb250000";
     }
 
     SVCNTT(String taikhoan, String matkhau, String email) {
+        super();
         this.taikhoan = taikhoan;
         this.matkhau = matkhau;
         this.email = email;

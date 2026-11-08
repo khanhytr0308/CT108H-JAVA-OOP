@@ -7,15 +7,13 @@ import lab2.*;
 public class Diem_mau extends Point{
     public String color;
 
-    Diem_mau(int x, int y, String color){
-        this.x = x;
-        this.y = y;
+    Diem_mau(int x1, int y1, String color){
+        super(x1, y1);
         this.color = color;
     }
 
     Diem_mau(){
-        this.x = 5;
-        this.y = 10;
+        super();
         this.color = "xanh";
     }
 
@@ -31,8 +29,7 @@ public class Diem_mau extends Point{
     }
 
     void show_info(){
-        System.out.println("diem x: " + this.x);
-        System.out.println("diem y: " + this.y);
+        super.show();
         System.out.println("mau: " + this.color);
     }
 
